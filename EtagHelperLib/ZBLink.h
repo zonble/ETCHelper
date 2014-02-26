@@ -9,7 +9,6 @@
 @param inPrice how much does driving on the link cost
 @param tag actually it is the name of the freeway where the link
 belongs to */
-*/
 - (instancetype)initWithNode:(ZBNode *)toNode price:(double)inPrice tag:(NSString *)inTag;
 
 /*! Where the link goes to. */

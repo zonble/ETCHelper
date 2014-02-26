@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D415CB1418BE57F3000A3A71 /* ZBLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB0D18BE57F3000A3A71 /* ZBLink.m */; };
+		D415CB1518BE57F3000A3A71 /* ZBLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB0D18BE57F3000A3A71 /* ZBLink.m */; };
+		D415CB1618BE57F3000A3A71 /* ZBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB0F18BE57F3000A3A71 /* ZBNode.m */; };
+		D415CB1718BE57F3000A3A71 /* ZBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB0F18BE57F3000A3A71 /* ZBNode.m */; };
+		D415CB1818BE57F3000A3A71 /* ZBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB1118BE57F3000A3A71 /* ZBRoute.m */; };
+		D415CB1918BE57F3000A3A71 /* ZBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB1118BE57F3000A3A71 /* ZBRoute.m */; };
+		D415CB1A18BE57F3000A3A71 /* ZBRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB1318BE57F3000A3A71 /* ZBRouteManager.m */; };
+		D415CB1B18BE57F3000A3A71 /* ZBRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D415CB1318BE57F3000A3A71 /* ZBRouteManager.m */; };
 		D4F6017A18BE25BA00855310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017918BE25BA00855310 /* Foundation.framework */; };
 		D4F6017C18BE25BA00855310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017B18BE25BA00855310 /* CoreGraphics.framework */; };
 		D4F6017E18BE25BA00855310 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017D18BE25BA00855310 /* UIKit.framework */; };
@@ -20,15 +28,7 @@
 		D4F6019D18BE25BA00855310 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F6019B18BE25BA00855310 /* InfoPlist.strings */; };
 		D4F6019F18BE25BA00855310 /* EtagHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F6019E18BE25BA00855310 /* EtagHelperTests.m */; };
 		D4F601A918BE25D700855310 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4F601A818BE25D700855310 /* data.txt */; };
-		D4F601AC18BE2C0100855310 /* ZBRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AB18BE2C0100855310 /* ZBRouteManager.m */; };
-		D4F601AF18BE2C1A00855310 /* ZBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AE18BE2C1A00855310 /* ZBNode.m */; };
-		D4F601B218BE2C2A00855310 /* ZBLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B118BE2C2A00855310 /* ZBLink.m */; };
 		D4F601B318BE32E300855310 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4F601A818BE25D700855310 /* data.txt */; };
-		D4F601B418BE32F900855310 /* ZBRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AB18BE2C0100855310 /* ZBRouteManager.m */; };
-		D4F601B518BE32FB00855310 /* ZBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AE18BE2C1A00855310 /* ZBNode.m */; };
-		D4F601B618BE32FE00855310 /* ZBLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B118BE2C2A00855310 /* ZBLink.m */; };
-		D4F601B918BE456000855310 /* ZBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B818BE456000855310 /* ZBRoute.m */; };
-		D4F601BA18BE478000855310 /* ZBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B818BE456000855310 /* ZBRoute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D415CB0C18BE57F3000A3A71 /* ZBLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBLink.h; sourceTree = "<group>"; };
+		D415CB0D18BE57F3000A3A71 /* ZBLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBLink.m; sourceTree = "<group>"; };
+		D415CB0E18BE57F3000A3A71 /* ZBNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNode.h; sourceTree = "<group>"; };
+		D415CB0F18BE57F3000A3A71 /* ZBNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNode.m; sourceTree = "<group>"; };
+		D415CB1018BE57F3000A3A71 /* ZBRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRoute.h; sourceTree = "<group>"; };
+		D415CB1118BE57F3000A3A71 /* ZBRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRoute.m; sourceTree = "<group>"; };
+		D415CB1218BE57F3000A3A71 /* ZBRouteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRouteManager.h; sourceTree = "<group>"; };
+		D415CB1318BE57F3000A3A71 /* ZBRouteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRouteManager.m; sourceTree = "<group>"; };
 		D4F6017618BE25BA00855310 /* EtagHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtagHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F6017918BE25BA00855310 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4F6017B18BE25BA00855310 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,14 +67,6 @@
 		D4F6019C18BE25BA00855310 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4F6019E18BE25BA00855310 /* EtagHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EtagHelperTests.m; sourceTree = "<group>"; };
 		D4F601A818BE25D700855310 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
-		D4F601AA18BE2C0100855310 /* ZBRouteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRouteManager.h; sourceTree = "<group>"; };
-		D4F601AB18BE2C0100855310 /* ZBRouteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRouteManager.m; sourceTree = "<group>"; };
-		D4F601AD18BE2C1A00855310 /* ZBNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNode.h; sourceTree = "<group>"; };
-		D4F601AE18BE2C1A00855310 /* ZBNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNode.m; sourceTree = "<group>"; };
-		D4F601B018BE2C2A00855310 /* ZBLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBLink.h; sourceTree = "<group>"; };
-		D4F601B118BE2C2A00855310 /* ZBLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBLink.m; sourceTree = "<group>"; };
-		D4F601B718BE456000855310 /* ZBRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRoute.h; sourceTree = "<group>"; };
-		D4F601B818BE456000855310 /* ZBRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRoute.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +93,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D415CB0B18BE57F3000A3A71 /* EtagHelperLib */ = {
+			isa = PBXGroup;
+			children = (
+				D415CB0C18BE57F3000A3A71 /* ZBLink.h */,
+				D415CB0D18BE57F3000A3A71 /* ZBLink.m */,
+				D415CB0E18BE57F3000A3A71 /* ZBNode.h */,
+				D415CB0F18BE57F3000A3A71 /* ZBNode.m */,
+				D415CB1018BE57F3000A3A71 /* ZBRoute.h */,
+				D415CB1118BE57F3000A3A71 /* ZBRoute.m */,
+				D415CB1218BE57F3000A3A71 /* ZBRouteManager.h */,
+				D415CB1318BE57F3000A3A71 /* ZBRouteManager.m */,
+			);
+			path = EtagHelperLib;
+			sourceTree = "<group>";
+		};
 		D4F6016D18BE25BA00855310 = {
 			isa = PBXGroup;
 			children = (
+				D415CB0B18BE57F3000A3A71 /* EtagHelperLib */,
 				D4F6017F18BE25BA00855310 /* EtagHelper */,
 				D4F6019818BE25BA00855310 /* EtagHelperTests */,
 				D4F6017818BE25BA00855310 /* Frameworks */,
@@ -131,14 +147,6 @@
 				D4F6018B18BE25BA00855310 /* Images.xcassets */,
 				D4F6018018BE25BA00855310 /* Supporting Files */,
 				D4F601A818BE25D700855310 /* data.txt */,
-				D4F601AA18BE2C0100855310 /* ZBRouteManager.h */,
-				D4F601AB18BE2C0100855310 /* ZBRouteManager.m */,
-				D4F601AD18BE2C1A00855310 /* ZBNode.h */,
-				D4F601AE18BE2C1A00855310 /* ZBNode.m */,
-				D4F601B018BE2C2A00855310 /* ZBLink.h */,
-				D4F601B118BE2C2A00855310 /* ZBLink.m */,
-				D4F601B718BE456000855310 /* ZBRoute.h */,
-				D4F601B818BE456000855310 /* ZBRoute.m */,
 			);
 			path = EtagHelper;
 			sourceTree = "<group>";
@@ -271,11 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F6018A18BE25BA00855310 /* ZBAppDelegate.m in Sources */,
-				D4F601AF18BE2C1A00855310 /* ZBNode.m in Sources */,
-				D4F601B218BE2C2A00855310 /* ZBLink.m in Sources */,
-				D4F601B918BE456000855310 /* ZBRoute.m in Sources */,
+				D415CB1618BE57F3000A3A71 /* ZBNode.m in Sources */,
 				D4F6018618BE25BA00855310 /* main.m in Sources */,
-				D4F601AC18BE2C0100855310 /* ZBRouteManager.m in Sources */,
+				D415CB1818BE57F3000A3A71 /* ZBRoute.m in Sources */,
+				D415CB1418BE57F3000A3A71 /* ZBLink.m in Sources */,
+				D415CB1A18BE57F3000A3A71 /* ZBRouteManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F6019F18BE25BA00855310 /* EtagHelperTests.m in Sources */,
-				D4F601B618BE32FE00855310 /* ZBLink.m in Sources */,
-				D4F601B518BE32FB00855310 /* ZBNode.m in Sources */,
-				D4F601BA18BE478000855310 /* ZBRoute.m in Sources */,
-				D4F601B418BE32F900855310 /* ZBRouteManager.m in Sources */,
+				D415CB1B18BE57F3000A3A71 /* ZBRouteManager.m in Sources */,
+				D415CB1718BE57F3000A3A71 /* ZBNode.m in Sources */,
+				D415CB1518BE57F3000A3A71 /* ZBLink.m in Sources */,
+				D415CB1918BE57F3000A3A71 /* ZBRoute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +488,7 @@
 				D4F601A418BE25BA00855310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4F601A518BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +497,7 @@
 				D4F601A718BE25BA00855310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
