@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4F6017A18BE25BA00855310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017918BE25BA00855310 /* Foundation.framework */; };
+		D4F6017C18BE25BA00855310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017B18BE25BA00855310 /* CoreGraphics.framework */; };
+		D4F6017E18BE25BA00855310 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017D18BE25BA00855310 /* UIKit.framework */; };
+		D4F6018418BE25BA00855310 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F6018218BE25BA00855310 /* InfoPlist.strings */; };
+		D4F6018618BE25BA00855310 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F6018518BE25BA00855310 /* main.m */; };
+		D4F6018A18BE25BA00855310 /* ZBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F6018918BE25BA00855310 /* ZBAppDelegate.m */; };
+		D4F6018C18BE25BA00855310 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F6018B18BE25BA00855310 /* Images.xcassets */; };
+		D4F6019318BE25BA00855310 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6019218BE25BA00855310 /* XCTest.framework */; };
+		D4F6019418BE25BA00855310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017918BE25BA00855310 /* Foundation.framework */; };
+		D4F6019518BE25BA00855310 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017D18BE25BA00855310 /* UIKit.framework */; };
+		D4F6019D18BE25BA00855310 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F6019B18BE25BA00855310 /* InfoPlist.strings */; };
+		D4F6019F18BE25BA00855310 /* EtagHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F6019E18BE25BA00855310 /* EtagHelperTests.m */; };
+		D4F601A918BE25D700855310 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4F601A818BE25D700855310 /* data.txt */; };
+		D4F601AC18BE2C0100855310 /* ZBRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AB18BE2C0100855310 /* ZBRouteManager.m */; };
+		D4F601AF18BE2C1A00855310 /* ZBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AE18BE2C1A00855310 /* ZBNode.m */; };
+		D4F601B218BE2C2A00855310 /* ZBLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B118BE2C2A00855310 /* ZBLink.m */; };
+		D4F601B318BE32E300855310 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4F601A818BE25D700855310 /* data.txt */; };
+		D4F601B418BE32F900855310 /* ZBRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AB18BE2C0100855310 /* ZBRouteManager.m */; };
+		D4F601B518BE32FB00855310 /* ZBNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601AE18BE2C1A00855310 /* ZBNode.m */; };
+		D4F601B618BE32FE00855310 /* ZBLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B118BE2C2A00855310 /* ZBLink.m */; };
+		D4F601B918BE456000855310 /* ZBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B818BE456000855310 /* ZBRoute.m */; };
+		D4F601BA18BE478000855310 /* ZBRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F601B818BE456000855310 /* ZBRoute.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4F6019618BE25BA00855310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4F6016E18BE25BA00855310 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4F6017518BE25BA00855310;
+			remoteInfo = EtagHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4F6017618BE25BA00855310 /* EtagHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtagHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F6017918BE25BA00855310 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4F6017B18BE25BA00855310 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D4F6017D18BE25BA00855310 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D4F6018118BE25BA00855310 /* EtagHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EtagHelper-Info.plist"; sourceTree = "<group>"; };
+		D4F6018318BE25BA00855310 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4F6018518BE25BA00855310 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4F6018718BE25BA00855310 /* EtagHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EtagHelper-Prefix.pch"; sourceTree = "<group>"; };
+		D4F6018818BE25BA00855310 /* ZBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBAppDelegate.h; sourceTree = "<group>"; };
+		D4F6018918BE25BA00855310 /* ZBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBAppDelegate.m; sourceTree = "<group>"; };
+		D4F6018B18BE25BA00855310 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D4F6019118BE25BA00855310 /* EtagHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EtagHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F6019218BE25BA00855310 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D4F6019A18BE25BA00855310 /* EtagHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EtagHelperTests-Info.plist"; sourceTree = "<group>"; };
+		D4F6019C18BE25BA00855310 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4F6019E18BE25BA00855310 /* EtagHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EtagHelperTests.m; sourceTree = "<group>"; };
+		D4F601A818BE25D700855310 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
+		D4F601AA18BE2C0100855310 /* ZBRouteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRouteManager.h; sourceTree = "<group>"; };
+		D4F601AB18BE2C0100855310 /* ZBRouteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRouteManager.m; sourceTree = "<group>"; };
+		D4F601AD18BE2C1A00855310 /* ZBNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNode.h; sourceTree = "<group>"; };
+		D4F601AE18BE2C1A00855310 /* ZBNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNode.m; sourceTree = "<group>"; };
+		D4F601B018BE2C2A00855310 /* ZBLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBLink.h; sourceTree = "<group>"; };
+		D4F601B118BE2C2A00855310 /* ZBLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBLink.m; sourceTree = "<group>"; };
+		D4F601B718BE456000855310 /* ZBRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRoute.h; sourceTree = "<group>"; };
+		D4F601B818BE456000855310 /* ZBRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRoute.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4F6017318BE25BA00855310 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F6017C18BE25BA00855310 /* CoreGraphics.framework in Frameworks */,
+				D4F6017E18BE25BA00855310 /* UIKit.framework in Frameworks */,
+				D4F6017A18BE25BA00855310 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F6018E18BE25BA00855310 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F6019318BE25BA00855310 /* XCTest.framework in Frameworks */,
+				D4F6019518BE25BA00855310 /* UIKit.framework in Frameworks */,
+				D4F6019418BE25BA00855310 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4F6016D18BE25BA00855310 = {
+			isa = PBXGroup;
+			children = (
+				D4F6017F18BE25BA00855310 /* EtagHelper */,
+				D4F6019818BE25BA00855310 /* EtagHelperTests */,
+				D4F6017818BE25BA00855310 /* Frameworks */,
+				D4F6017718BE25BA00855310 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4F6017718BE25BA00855310 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4F6017618BE25BA00855310 /* EtagHelper.app */,
+				D4F6019118BE25BA00855310 /* EtagHelperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4F6017818BE25BA00855310 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4F6017918BE25BA00855310 /* Foundation.framework */,
+				D4F6017B18BE25BA00855310 /* CoreGraphics.framework */,
+				D4F6017D18BE25BA00855310 /* UIKit.framework */,
+				D4F6019218BE25BA00855310 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4F6017F18BE25BA00855310 /* EtagHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D4F6018818BE25BA00855310 /* ZBAppDelegate.h */,
+				D4F6018918BE25BA00855310 /* ZBAppDelegate.m */,
+				D4F6018B18BE25BA00855310 /* Images.xcassets */,
+				D4F6018018BE25BA00855310 /* Supporting Files */,
+				D4F601A818BE25D700855310 /* data.txt */,
+				D4F601AA18BE2C0100855310 /* ZBRouteManager.h */,
+				D4F601AB18BE2C0100855310 /* ZBRouteManager.m */,
+				D4F601AD18BE2C1A00855310 /* ZBNode.h */,
+				D4F601AE18BE2C1A00855310 /* ZBNode.m */,
+				D4F601B018BE2C2A00855310 /* ZBLink.h */,
+				D4F601B118BE2C2A00855310 /* ZBLink.m */,
+				D4F601B718BE456000855310 /* ZBRoute.h */,
+				D4F601B818BE456000855310 /* ZBRoute.m */,
+			);
+			path = EtagHelper;
+			sourceTree = "<group>";
+		};
+		D4F6018018BE25BA00855310 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4F6018118BE25BA00855310 /* EtagHelper-Info.plist */,
+				D4F6018218BE25BA00855310 /* InfoPlist.strings */,
+				D4F6018518BE25BA00855310 /* main.m */,
+				D4F6018718BE25BA00855310 /* EtagHelper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4F6019818BE25BA00855310 /* EtagHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4F6019E18BE25BA00855310 /* EtagHelperTests.m */,
+				D4F6019918BE25BA00855310 /* Supporting Files */,
+			);
+			path = EtagHelperTests;
+			sourceTree = "<group>";
+		};
+		D4F6019918BE25BA00855310 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4F6019A18BE25BA00855310 /* EtagHelperTests-Info.plist */,
+				D4F6019B18BE25BA00855310 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4F6017518BE25BA00855310 /* EtagHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4F601A218BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelper" */;
+			buildPhases = (
+				D4F6017218BE25BA00855310 /* Sources */,
+				D4F6017318BE25BA00855310 /* Frameworks */,
+				D4F6017418BE25BA00855310 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EtagHelper;
+			productName = EtagHelper;
+			productReference = D4F6017618BE25BA00855310 /* EtagHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4F6019018BE25BA00855310 /* EtagHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4F601A518BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelperTests" */;
+			buildPhases = (
+				D4F6018D18BE25BA00855310 /* Sources */,
+				D4F6018E18BE25BA00855310 /* Frameworks */,
+				D4F6018F18BE25BA00855310 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4F6019718BE25BA00855310 /* PBXTargetDependency */,
+			);
+			name = EtagHelperTests;
+			productName = EtagHelperTests;
+			productReference = D4F6019118BE25BA00855310 /* EtagHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4F6016E18BE25BA00855310 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZB;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Weizhong Yang";
+				TargetAttributes = {
+					D4F6019018BE25BA00855310 = {
+						TestTargetID = D4F6017518BE25BA00855310;
+					};
+				};
+			};
+			buildConfigurationList = D4F6017118BE25BA00855310 /* Build configuration list for PBXProject "EtagHelper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D4F6016D18BE25BA00855310;
+			productRefGroup = D4F6017718BE25BA00855310 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4F6017518BE25BA00855310 /* EtagHelper */,
+				D4F6019018BE25BA00855310 /* EtagHelperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4F6017418BE25BA00855310 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F6018418BE25BA00855310 /* InfoPlist.strings in Resources */,
+				D4F601A918BE25D700855310 /* data.txt in Resources */,
+				D4F6018C18BE25BA00855310 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F6018F18BE25BA00855310 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F601B318BE32E300855310 /* data.txt in Resources */,
+				D4F6019D18BE25BA00855310 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4F6017218BE25BA00855310 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F6018A18BE25BA00855310 /* ZBAppDelegate.m in Sources */,
+				D4F601AF18BE2C1A00855310 /* ZBNode.m in Sources */,
+				D4F601B218BE2C2A00855310 /* ZBLink.m in Sources */,
+				D4F601B918BE456000855310 /* ZBRoute.m in Sources */,
+				D4F6018618BE25BA00855310 /* main.m in Sources */,
+				D4F601AC18BE2C0100855310 /* ZBRouteManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F6018D18BE25BA00855310 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F6019F18BE25BA00855310 /* EtagHelperTests.m in Sources */,
+				D4F601B618BE32FE00855310 /* ZBLink.m in Sources */,
+				D4F601B518BE32FB00855310 /* ZBNode.m in Sources */,
+				D4F601BA18BE478000855310 /* ZBRoute.m in Sources */,
+				D4F601B418BE32F900855310 /* ZBRouteManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4F6019718BE25BA00855310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4F6017518BE25BA00855310 /* EtagHelper */;
+			targetProxy = D4F6019618BE25BA00855310 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4F6018218BE25BA00855310 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4F6018318BE25BA00855310 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D4F6019B18BE25BA00855310 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4F6019C18BE25BA00855310 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4F601A018BE25BA00855310 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D4F601A118BE25BA00855310 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4F601A318BE25BA00855310 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
+				INFOPLIST_FILE = "EtagHelper/EtagHelper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D4F601A418BE25BA00855310 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
+				INFOPLIST_FILE = "EtagHelper/EtagHelper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D4F601A618BE25BA00855310 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EtagHelper.app/EtagHelper";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EtagHelperTests/EtagHelperTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D4F601A718BE25BA00855310 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EtagHelper.app/EtagHelper";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
+				INFOPLIST_FILE = "EtagHelperTests/EtagHelperTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4F6017118BE25BA00855310 /* Build configuration list for PBXProject "EtagHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4F601A018BE25BA00855310 /* Debug */,
+				D4F601A118BE25BA00855310 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4F601A218BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4F601A318BE25BA00855310 /* Debug */,
+				D4F601A418BE25BA00855310 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D4F601A518BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4F601A618BE25BA00855310 /* Debug */,
+				D4F601A718BE25BA00855310 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4F6016E18BE25BA00855310 /* Project object */;
+}

@@ -1,0 +1,163 @@
+#import "ZBRouteManager.h"
+
+@interface ZBRouteManager ()
+{
+	NSMutableSet *nodes;
+	NSMutableDictionary *highwayNodesMap;
+}
+
+@end
+
+@implementation ZBRouteManager
+
+- (ZBNode *)findOrCreateNodeWithName:(NSString *)inName
+{
+	ZBNode *aNode = [self nodeWithName:inName];
+	if (!aNode) {
+		aNode = [[ZBNode alloc] initWithName:inName];
+		[nodes addObject:aNode];
+	}
+	return aNode;
+}
+
+- (void)_buildModelWithURL:(NSURL *)inURL
+{
+	nodes = [[NSMutableSet alloc] init];
+	highwayNodesMap = [[NSMutableDictionary alloc] init];
+
+	NSString *text = [[NSString alloc] initWithContentsOfURL:inURL encoding:NSUTF8StringEncoding error:nil];
+	if (!text) {
+		return;
+	}
+	NSArray *lines = [text componentsSeparatedByString:@"\n"];
+	for (NSString *line in lines) {
+		NSArray *components = [line componentsSeparatedByString:@","];
+		if ([components count] != 4) {
+			continue;
+		}
+		NSString *tag = components[0];
+		NSString *fromName = components[1];
+		NSString *toName = components[2];
+		NSString *priceString = components[3];
+		ZBNode *fromNode = [self findOrCreateNodeWithName:fromName];
+		ZBNode *toNode = [self findOrCreateNodeWithName:toName];
+		makeLinkBetweenNodes(fromNode, toNode, [priceString doubleValue], tag);
+
+		NSMutableArray *highwayNodes = [highwayNodesMap objectForKey:tag];
+		if (!highwayNodes) {
+			highwayNodes = [NSMutableArray array];
+			[highwayNodesMap setObject:highwayNodes forKey:tag];
+		}
+		if (![highwayNodes containsObject:fromNode]) {
+			[highwayNodes addObject:fromNode];
+		}
+		if (![highwayNodes containsObject:toNode]) {
+			[highwayNodes addObject:toNode];
+		}
+	}
+}
+
+- (instancetype)initWithRoutingDataFileURL:(NSURL *)inURL
+{
+    self = [super init];
+    if (self) {
+        [self _buildModelWithURL:inURL];
+    }
+    return self;
+}
+
+- (ZBNode *)nodeWithName:(NSString *)inName
+{
+	NSParameterAssert(inName != nil);
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name == %@", inName];
+	NSSet *matchingNodes = [nodes filteredSetUsingPredicate:predicate];
+	if ([matchingNodes count]) {
+		NSAssert([matchingNodes count] == 1, @"there should be only one item");
+		return [matchingNodes anyObject];
+	}
+	return nil;
+}
+
+- (NSArray *)nodesOnFreeway:(NSString *)inName
+{
+	NSParameterAssert(inName != nil);
+	return highwayNodesMap[inName];
+}
+
+- (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError *)outError
+{
+	NSParameterAssert([nodes containsObject:fromNode]);
+	NSParameterAssert([nodes containsObject:toNode]);
+	if (fromNode == toNode) {
+		// TODO: return error
+		return nil;
+	}
+
+	NSInteger currentIndex = 0;
+	NSMutableArray *routes = [NSMutableArray array];
+	NSArray *initialLinks = fromNode.links;
+	for (ZBLink *link in initialLinks) {
+		[routes addObject:[NSMutableArray arrayWithObject:link]];
+	}
+	while (currentIndex < [routes count]) {
+		NSMutableArray *currentRoute = routes[currentIndex];
+		NSMutableSet *existingNodes = [NSMutableSet setWithArray:[currentRoute valueForKeyPath:@"to"]];
+		[existingNodes addObject:fromNode];
+
+		ZBNode *lastNode = [[currentRoute lastObject] to];
+		while (lastNode) {
+			if (lastNode == toNode) {
+				break;
+			}
+			NSArray *links = [lastNode linksBesideTowardNodes:existingNodes];
+			if (![links count]) {
+				lastNode = nil;
+			}
+			else {
+				ZBLink *firstLink = links[0];
+				[currentRoute addObject:firstLink];
+				[existingNodes addObject:firstLink.to];
+				lastNode = firstLink.to;
+
+				if ([links count] > 1) {
+					for (ZBLink *link in [links subarrayWithRange:NSMakeRange(1, [links count] -1)]) {
+						NSMutableArray *copyRoute = [NSMutableArray arrayWithArray:currentRoute];
+						[copyRoute addObject:link];
+						[routes addObject:copyRoute];
+					}
+				}
+			}
+		}
+		currentIndex++;
+	}
+
+	NSMutableArray *successRoutes = [NSMutableArray array];
+	[routes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		NSArray *links = (NSArray *)obj;
+		ZBLink *link = [links lastObject];
+		if (link.to == toNode) {
+			ZBRoute *route = [[ZBRoute alloc] initWithBeginNode:fromNode links:links];
+			[successRoutes addObject:route];
+		}
+	}];
+
+	[successRoutes sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+		ZBRoute *a = (ZBRoute *)obj1;
+		ZBRoute *b = (ZBRoute *)obj2;
+		return [@(a.totalPrice) compare:@(b.totalPrice)];
+	}];
+	return successRoutes;
+}
+
+@synthesize nodes;
+
+- (NSSet *)allNodeNames
+{
+	return [nodes valueForKeyPath:@"name"];
+}
+- (NSSet *)allFreewayNames
+{
+	return [NSSet setWithArray:[highwayNodesMap allKeys]];
+}
+
+@end
