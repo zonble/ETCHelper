@@ -1,5 +1,7 @@
 #import "ZBRouteManager.h"
 
+NSString *const ZBRouteManagerErrorDomain = @"ZBRouteManagerErrorDomain";
+
 @interface ZBRouteManager ()
 {
 	NSMutableSet *nodes;
@@ -31,6 +33,10 @@
 	}
 	NSArray *lines = [text componentsSeparatedByString:@"\n"];
 	for (NSString *line in lines) {
+		if ([line hasPrefix:@"#"]) { // comment
+			continue;
+		}
+
 		NSArray *components = [line componentsSeparatedByString:@","];
 		if ([components count] != 4) {
 			continue;
@@ -84,12 +90,13 @@
 	return freewayNodesMap[inName];
 }
 
-- (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError *)outError
+- (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError **)outError
 {
 	NSParameterAssert([nodes containsObject:fromNode]);
 	NSParameterAssert([nodes containsObject:toNode]);
 	if (fromNode == toNode) {
-		// TODO: return error
+		NSError *error = [NSError errorWithDomain:ZBRouteManagerErrorDomain code:0 userInfo:@{NSLocalizedDescriptionKey:NSLocalizedString(@"The begin and the end should be different nodes.", @"")}];
+		*outError = error;
 		return nil;
 	}
 
@@ -147,6 +154,13 @@
 		return [@(a.totalPrice) compare:@(b.totalPrice)];
 	}];
 	return successRoutes;
+}
+
+- (NSArray *)possibleRoutesFrom:(NSString *)fromNodeName to:(NSString *)toNodeName error:(NSError **)outError
+{
+	ZBNode *fromNode = [self nodeWithName:fromNodeName];
+	ZBNode *toNode = [self nodeWithName:toNodeName];
+	return [self possibleRoutesFromNode:fromNode toNode:toNode error:outError];
 }
 
 @synthesize nodes;

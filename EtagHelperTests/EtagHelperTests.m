@@ -37,13 +37,13 @@
 	XCTAssertTrue([@"汐止系統,堤頂,下塔悠出口,環北,五股,泰山轉接道,機場系統,中壢,楊梅" isEqualToString:[[nodes valueForKeyPath:@"name"] componentsJoinedByString:@","]],  @"Nodes should match");
 }
 
-//- (void)testExample1
-//{
-//	NSArray *routes = [manager possibleRoutesFromNode:NODE(@"國姓") toNode:NODE(@"基隆") error:nil];
-//	for (ZBRoute *route in routes) {
-//		NSLog(@"%@", route.stringPresentation);
-//	}
-//}
+- (void)testExample1
+{
+	NSArray *routes = [manager possibleRoutesFrom:@"國姓" to:@"基隆" error:nil];
+	for (ZBRoute *route in routes) {
+		NSLog(@"%@", route.stringPresentation);
+	}
+}
 //
 //- (void)testExample2
 //{

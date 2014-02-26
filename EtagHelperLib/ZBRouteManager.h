@@ -3,6 +3,8 @@
 #import "ZBLink.h"
 #import "ZBRoute.h"
 
+extern NSString *const ZBRouteManagerErrorDomain;
+
 /*! A manager for maintaining the model built by nodes and links for
 illustrating the routes on freeways in Taiwan. */
 @interface ZBRouteManager : NSObject
@@ -21,7 +23,9 @@ allFreewayNames property. */
 - (NSArray *)nodesOnFreeway:(NSString *)inName;
 
 /*! Returns an array of possible routes. */
-- (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError *)outError;
+- (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError **)outError;
+/*! Returns an array of possible routes. */
+- (NSArray *)possibleRoutesFrom:(NSString *)fromNodeName to:(NSString *)toNodeName error:(NSError **)outError;
 
 /*! All nodes. */
 @property (readonly) NSSet *nodes;
@@ -30,3 +34,4 @@ allFreewayNames property. */
 /*! Names of all freeways. */
 @property (readonly) NSSet *allFreewayNames;
 @end
+
