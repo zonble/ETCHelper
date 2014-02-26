@@ -19,13 +19,13 @@
 
 - (instancetype)initWithBeginNode:(ZBNode *)inBeginNode links:(NSArray *)inLinks
 {
-    self = [super init];
-    if (self) {
+	self = [super init];
+	if (self) {
 		beginNode = inBeginNode;
 		links = inLinks;
 		[self _calculateTotalPrice];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (NSString *)stringPresentation

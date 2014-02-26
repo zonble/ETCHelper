@@ -12,13 +12,13 @@
 
 - (instancetype)initWithNode:(ZBNode *)toNode price:(double)inPrice tag:(NSString *)inTag
 {
-    self = [super init];
-    if (self) {
-        to = toNode;
+	self = [super init];
+	if (self) {
+		to = toNode;
 		price = inPrice;
 		tag = inTag;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (NSString *)description

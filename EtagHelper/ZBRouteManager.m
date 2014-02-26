@@ -3,7 +3,7 @@
 @interface ZBRouteManager ()
 {
 	NSMutableSet *nodes;
-	NSMutableDictionary *highwayNodesMap;
+	NSMutableDictionary *freewayNodesMap;
 }
 
 @end
@@ -23,7 +23,7 @@
 - (void)_buildModelWithURL:(NSURL *)inURL
 {
 	nodes = [[NSMutableSet alloc] init];
-	highwayNodesMap = [[NSMutableDictionary alloc] init];
+	freewayNodesMap = [[NSMutableDictionary alloc] init];
 
 	NSString *text = [[NSString alloc] initWithContentsOfURL:inURL encoding:NSUTF8StringEncoding error:nil];
 	if (!text) {
@@ -43,27 +43,27 @@
 		ZBNode *toNode = [self findOrCreateNodeWithName:toName];
 		makeLinkBetweenNodes(fromNode, toNode, [priceString doubleValue], tag);
 
-		NSMutableArray *highwayNodes = [highwayNodesMap objectForKey:tag];
-		if (!highwayNodes) {
-			highwayNodes = [NSMutableArray array];
-			[highwayNodesMap setObject:highwayNodes forKey:tag];
+		NSMutableArray *freewayNodes = [freewayNodesMap objectForKey:tag];
+		if (!freewayNodes) {
+			freewayNodes = [NSMutableArray array];
+			[freewayNodesMap setObject:freewayNodes forKey:tag];
 		}
-		if (![highwayNodes containsObject:fromNode]) {
-			[highwayNodes addObject:fromNode];
+		if (![freewayNodes containsObject:fromNode]) {
+			[freewayNodes addObject:fromNode];
 		}
-		if (![highwayNodes containsObject:toNode]) {
-			[highwayNodes addObject:toNode];
+		if (![freewayNodes containsObject:toNode]) {
+			[freewayNodes addObject:toNode];
 		}
 	}
 }
 
 - (instancetype)initWithRoutingDataFileURL:(NSURL *)inURL
 {
-    self = [super init];
-    if (self) {
-        [self _buildModelWithURL:inURL];
-    }
-    return self;
+	self = [super init];
+	if (self) {
+		[self _buildModelWithURL:inURL];
+	}
+	return self;
 }
 
 - (ZBNode *)nodeWithName:(NSString *)inName
@@ -81,7 +81,7 @@
 - (NSArray *)nodesOnFreeway:(NSString *)inName
 {
 	NSParameterAssert(inName != nil);
-	return highwayNodesMap[inName];
+	return freewayNodesMap[inName];
 }
 
 - (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError *)outError
@@ -157,7 +157,7 @@
 }
 - (NSSet *)allFreewayNames
 {
-	return [NSSet setWithArray:[highwayNodesMap allKeys]];
+	return [NSSet setWithArray:[freewayNodesMap allKeys]];
 }
 
 @end

@@ -12,12 +12,12 @@
 
 - (instancetype)initWithName:(NSString *)inName
 {
-    self = [super init];
-    if (self) {
-        name = inName;
+	self = [super init];
+	if (self) {
+		name = inName;
 		links = [[NSMutableArray alloc] init];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (NSString *)description
