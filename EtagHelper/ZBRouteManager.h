@@ -4,20 +4,22 @@
 #import "ZBRoute.h"
 
 /*! A manager for maintaining the model built by nodes and links for
-    illustrating the routes on freeways in Taiwan. */
+illustrating the routes on freeways in Taiwan. */
 @interface ZBRouteManager : NSObject
 
 /*! Creates a new instance by giving the URL of the file for building
-    data model. */
+data model. */
 - (instancetype)initWithRoutingDataFileURL:(NSURL *)inURL;
 
 /*! Returns a node by giving the name of the node. Node names could be
-    found in the nodes or allNodeNames property. */
+found in the nodes or allNodeNames property. */
 - (ZBNode *)nodeWithName:(NSString *)inName;
+
 /*! Returns an array of nodes belong to a highway by giving the name
-    of the freeway. The highway named could be found in the
-    allFreewayNames property. */
+of the freeway. The highway named could be found in the
+allFreewayNames property. */
 - (NSArray *)nodesOnFreeway:(NSString *)inName;
+
 /*! Returns an array of possible routes. */
 - (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError *)outError;
 
