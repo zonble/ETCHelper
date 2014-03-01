@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 #import "ZBRouteManager.h"
-
+#include <stdlib.h>
 
 @interface EtagHelperTests : XCTestCase
 {
@@ -25,49 +25,44 @@
     [super tearDown];
 }
 
-- (void)testName
+- (void)testAllNodes
 {
 	NSSet *allNodeNames = [manager allNodeNames];
-	NSLog(@"allNodeNames:%@", [[allNodeNames allObjects] componentsJoinedByString:@","]);
-
-	NSSet *allFreewayNames = [manager allFreewayNames];
-	NSLog(@"allFreewayNames:%@", [[allFreewayNames allObjects] componentsJoinedByString:@","]);
-
-	NSArray *nodes = [manager nodesOnFreeway:@"國 1 高架"];
-	XCTAssertTrue([@"汐止系統,堤頂,下塔悠出口,環北,五股,泰山轉接道,機場系統,中壢,楊梅" isEqualToString:[[nodes valueForKeyPath:@"name"] componentsJoinedByString:@","]],  @"Nodes should match");
-}
-
-- (void)testExample1
-{
-	NSArray *routes = [manager possibleRoutesFrom:@"國姓" to:@"基隆" error:nil];
-	for (ZBRoute *route in routes) {
-		NSLog(@"%@", route.stringPresentation);
+	XCTAssertTrue([allNodeNames count] > 0, @"We must have names");
+	for (id obj in allNodeNames) {
+		XCTAssertTrue([obj isKindOfClass:[NSString class]], @"All names must be strings");
+	}
+	NSSet *nodes = [manager nodes];
+	XCTAssertTrue([nodes count] > 0, @"We must have names");
+	for (ZBNode *node in nodes) {
+		XCTAssertTrue([node isKindOfClass:[ZBNode class]], @"Must be a node");
+		NSArray *links = node.links;
+		XCTAssertTrue([links count] > 0, @"Must have a link.");
 	}
 }
-//
-//- (void)testExample2
-//{
-//	NSArray *routes = [manager possibleRoutesFromNode:NODE(@"基隆") toNode:NODE(@"八堵") error:nil];
-//	for (ZBRoute *route in routes) {
-//		NSLog(@"%@", route.stringPresentation);
-//	}
-//}
-//
-//- (void)testExample3
-//{
-//	NSArray *routes = [manager possibleRoutesFromNode:NODE(@"八堵") toNode:NODE(@"基隆") error:nil];
-//	for (ZBRoute *route in routes) {
-//		NSLog(@"%@", route.stringPresentation);
-//	}
-//}
-//
-//- (void)testExample4
-//{
-//	NSArray *routes = [manager possibleRoutesFromNode:NODE(@"國姓") toNode:NODE(@"基隆") error:nil];
-//	for (ZBRoute *route in routes) {
-//		NSLog(@"%@", route.stringPresentation);
-//	}
-//}
+
+- (void)testRoutesBetweenArbitraryNodes
+{
+	for (NSInteger i = 0; i < 10; i++) {
+		NSArray *nodes = [[manager nodes] allObjects];
+		ZBNode *from = [nodes objectAtIndex:arc4random() % [nodes count]];
+		ZBNode *to = nil;
+		while (to == nil) {
+			ZBNode *aNode = [nodes objectAtIndex:arc4random() % [nodes count]];
+			if (aNode != from) {
+				to = aNode;
+				break;
+			}
+		}
+		NSArray *routes = [manager possibleRoutesFromNode:from toNode:to error:nil];
+		XCTAssertTrue([routes count] > 0, @"Must have at least a route");
+//		for (ZBRoute *route in routes) {
+//			NSLog(@"%@", route.stringPresentation);
+//		}
+	}
+}
+
+
 
 
 @end
