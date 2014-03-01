@@ -17,30 +17,28 @@ static NSString *const CellIdentifier = @"Cell";
 
 	[super viewDidLoad];
 	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+	self.clearsSelectionOnViewWillAppear = YES;
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.freewayNames count];
+	return [self.freewayNames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 	cell.textLabel.text = self.freewayNames[indexPath.row];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    return cell;
+	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 	NSString *name = self.freewayNames[indexPath.row];
 	ZBRouteManager *manager = [self.delegate routeManagerForFreewaysTableViewController:self];
 	NSArray *nodes = [manager nodesOnFreeway:name];

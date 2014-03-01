@@ -1,5 +1,7 @@
 #import "ZBRootTableViewController.h"
 #import "ZBFreewaysTableViewController.h"
+#import "ZBRoutesTableViewController.h"
+#import "ZBRouteTableViewController.h"
 #import "ZBRouteManager.h"
 
 static NSString *const CellIdentifier = @"Cell";
@@ -16,44 +18,69 @@ static NSString *const CellIdentifier = @"Cell";
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
+	self = [super initWithStyle:style];
+	if (self) {
 		self.title = NSLocalizedString(@"ETC Helper", @"");
 		self.manager = [[ZBRouteManager alloc] initWithRoutingDataFileURL:[[NSBundle mainBundle] URLForResource:@"data" withExtension:@"txt"]];
 		self.fromPicker = [[ZBFreewaysTableViewController alloc] initWithStyle:UITableViewStylePlain];
 		self.fromPicker.delegate = self;
 		self.toPicker = [[ZBFreewaysTableViewController alloc] initWithStyle:UITableViewStylePlain];
 		self.toPicker.delegate = self;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
 }
 
 - (void)findPossibleRoutes
 {
+#define ERROR(x) [[[UIAlertView alloc] initWithTitle:NSLocalizedString(x, @"") message:@"" delegate:nil cancelButtonTitle:NSLocalizedString(@"Dismiss", @"") otherButtonTitles:nil] show]
+	if (!self.from) {
+		ERROR(NSLocalizedString(@"You did not set where to start!", @""));
+		return;
+	}
+	if (!self.to) {
+		ERROR(NSLocalizedString(@"You did not set where to end!", @""));
+		return;
+	}
+	if (self.from == self.to) {
+		ERROR(NSLocalizedString(@"The start and the end should be different!", @""));
+		return;
+	}
+	NSArray *routes = [self.manager possibleRoutesFromNode:self.from toNode:self.to error:nil];
 
+	if ([routes count] == 1) {
+		ZBRouteTableViewController *controller = [[ZBRouteTableViewController alloc] initWithStyle:UITableViewStylePlain];
+		controller.route = routes[0];
+		[self.navigationController pushViewController:controller animated:YES];
+	}
+	else {
+		ZBRoutesTableViewController *controller = [[ZBRoutesTableViewController alloc] initWithStyle:UITableViewStylePlain];
+		controller.routes = routes;
+		[self.navigationController pushViewController:controller animated:YES];
+	}
+#undef ERROR
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+	return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+	return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 	cell.textLabel.textColor = [UIColor blackColor];
 	cell.textLabel.textAlignment = NSTextAlignmentLeft;
 
@@ -75,7 +102,7 @@ static NSString *const CellIdentifier = @"Cell";
 		default:
 			break;
 	}
-    return cell;
+	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
