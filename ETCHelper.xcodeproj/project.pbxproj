@@ -462,15 +462,14 @@
 		D4F601A618BE25BA00855310 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EtagHelper.app/EtagHelper";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETCHelper.app/ETCHelper";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
+				GCC_PREFIX_HEADER = "EtagHelper/ETCHelper-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -485,15 +484,14 @@
 		D4F601A718BE25BA00855310 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EtagHelper.app/EtagHelper";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETCHelper.app/ETCHelper";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
+				GCC_PREFIX_HEADER = "EtagHelper/ETCHelper-Prefix.pch";
 				INFOPLIST_FILE = "EtagHelperTests/ETCHelperTests-Info.plist";
 				PRODUCT_NAME = ETCHelperTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";

@@ -25,6 +25,12 @@
     [super tearDown];
 }
 
+//- (void)test0
+//{
+//	ZBNode *z = [manager nodeWithName:@"機場系統"];
+//	NSLog(@"z:%@", z.links);
+//}
+
 - (void)testAllNodes
 {
 	NSSet *allNodeNames = [manager allNodeNames];

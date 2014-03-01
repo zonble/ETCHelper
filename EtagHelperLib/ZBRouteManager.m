@@ -121,18 +121,18 @@ NSString *const ZBRouteManagerErrorDomain = @"ZBRouteManagerErrorDomain";
 				lastNode = nil;
 			}
 			else {
-				ZBLink *firstLink = links[0];
-				[currentRoute addObject:firstLink];
-				[existingNodes addObject:firstLink.to];
-				lastNode = firstLink.to;
-
 				if ([links count] > 1) {
-					for (ZBLink *link in [links subarrayWithRange:NSMakeRange(1, [links count] -1)]) {
+					NSArray *otherLinks = [links subarrayWithRange:NSMakeRange(1, [links count] -1)];
+					for (ZBLink *link in otherLinks) {
 						NSMutableArray *copyRoute = [NSMutableArray arrayWithArray:currentRoute];
 						[copyRoute addObject:link];
 						[routes addObject:copyRoute];
 					}
 				}
+				ZBLink *firstLink = links[0];
+				[currentRoute addObject:firstLink];
+				[existingNodes addObject:firstLink.to];
+				lastNode = firstLink.to;
 			}
 		}
 		currentIndex++;
