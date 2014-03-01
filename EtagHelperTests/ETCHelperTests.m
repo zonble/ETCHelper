@@ -2,7 +2,7 @@
 #import "ZBRouteManager.h"
 #include <stdlib.h>
 
-@interface EtagHelperTests : XCTestCase
+@interface ETCHelperTests : XCTestCase
 {
 	ZBRouteManager *manager;
 }
@@ -10,7 +10,7 @@
 
 #define NODE(x) [manager nodeWithName:x]
 
-@implementation EtagHelperTests
+@implementation ETCHelperTests
 
 - (void)setUp
 {

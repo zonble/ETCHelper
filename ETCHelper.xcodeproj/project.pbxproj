@@ -29,7 +29,7 @@
 		D4F6019418BE25BA00855310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017918BE25BA00855310 /* Foundation.framework */; };
 		D4F6019518BE25BA00855310 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017D18BE25BA00855310 /* UIKit.framework */; };
 		D4F6019D18BE25BA00855310 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4F6019B18BE25BA00855310 /* InfoPlist.strings */; };
-		D4F6019F18BE25BA00855310 /* EtagHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F6019E18BE25BA00855310 /* EtagHelperTests.m */; };
+		D4F6019F18BE25BA00855310 /* ETCHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F6019E18BE25BA00855310 /* ETCHelperTests.m */; };
 		D4F601A918BE25D700855310 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4F601A818BE25D700855310 /* data.txt */; };
 		D4F601B318BE32E300855310 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4F601A818BE25D700855310 /* data.txt */; };
 /* End PBXBuildFile section */
@@ -59,22 +59,22 @@
 		D43FF17918C1C3E400E7F8DC /* ZBFreewaysTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBFreewaysTableViewController.m; sourceTree = "<group>"; };
 		D43FF17B18C1C71A00E7F8DC /* ZBNodesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNodesTableViewController.h; sourceTree = "<group>"; };
 		D43FF17C18C1C71A00E7F8DC /* ZBNodesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBNodesTableViewController.m; sourceTree = "<group>"; };
-		D4F6017618BE25BA00855310 /* EtagHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtagHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F6017618BE25BA00855310 /* ETCHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETCHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F6017918BE25BA00855310 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4F6017B18BE25BA00855310 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D4F6017D18BE25BA00855310 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D4F6018118BE25BA00855310 /* EtagHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EtagHelper-Info.plist"; sourceTree = "<group>"; };
+		D4F6018118BE25BA00855310 /* ETCHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETCHelper-Info.plist"; sourceTree = "<group>"; };
 		D4F6018318BE25BA00855310 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4F6018518BE25BA00855310 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D4F6018718BE25BA00855310 /* EtagHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EtagHelper-Prefix.pch"; sourceTree = "<group>"; };
+		D4F6018718BE25BA00855310 /* ETCHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETCHelper-Prefix.pch"; sourceTree = "<group>"; };
 		D4F6018818BE25BA00855310 /* ZBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBAppDelegate.h; sourceTree = "<group>"; };
 		D4F6018918BE25BA00855310 /* ZBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBAppDelegate.m; sourceTree = "<group>"; };
 		D4F6018B18BE25BA00855310 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D4F6019118BE25BA00855310 /* EtagHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EtagHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F6019118BE25BA00855310 /* ETCHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETCHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F6019218BE25BA00855310 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D4F6019A18BE25BA00855310 /* EtagHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EtagHelperTests-Info.plist"; sourceTree = "<group>"; };
+		D4F6019A18BE25BA00855310 /* ETCHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETCHelperTests-Info.plist"; sourceTree = "<group>"; };
 		D4F6019C18BE25BA00855310 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D4F6019E18BE25BA00855310 /* EtagHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EtagHelperTests.m; sourceTree = "<group>"; };
+		D4F6019E18BE25BA00855310 /* ETCHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCHelperTests.m; sourceTree = "<group>"; };
 		D4F601A818BE25D700855310 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				D415CB0B18BE57F3000A3A71 /* EtagHelperLib */,
-				D4F6017F18BE25BA00855310 /* EtagHelper */,
-				D4F6019818BE25BA00855310 /* EtagHelperTests */,
+				D4F6017F18BE25BA00855310 /* ETCHelper */,
+				D4F6019818BE25BA00855310 /* ETCHelperTests */,
 				D4F6017818BE25BA00855310 /* Frameworks */,
 				D4F6017718BE25BA00855310 /* Products */,
 			);
@@ -131,8 +131,8 @@
 		D4F6017718BE25BA00855310 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4F6017618BE25BA00855310 /* EtagHelper.app */,
-				D4F6019118BE25BA00855310 /* EtagHelperTests.xctest */,
+				D4F6017618BE25BA00855310 /* ETCHelper.app */,
+				D4F6019118BE25BA00855310 /* ETCHelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D4F6017F18BE25BA00855310 /* EtagHelper */ = {
+		D4F6017F18BE25BA00855310 /* ETCHelper */ = {
 			isa = PBXGroup;
 			children = (
 				D4F6018818BE25BA00855310 /* ZBAppDelegate.h */,
@@ -163,33 +163,35 @@
 				D4F6018018BE25BA00855310 /* Supporting Files */,
 				D4F601A818BE25D700855310 /* data.txt */,
 			);
+			name = ETCHelper;
 			path = EtagHelper;
 			sourceTree = "<group>";
 		};
 		D4F6018018BE25BA00855310 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4F6018118BE25BA00855310 /* EtagHelper-Info.plist */,
+				D4F6018118BE25BA00855310 /* ETCHelper-Info.plist */,
 				D4F6018218BE25BA00855310 /* InfoPlist.strings */,
 				D4F6018518BE25BA00855310 /* main.m */,
-				D4F6018718BE25BA00855310 /* EtagHelper-Prefix.pch */,
+				D4F6018718BE25BA00855310 /* ETCHelper-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D4F6019818BE25BA00855310 /* EtagHelperTests */ = {
+		D4F6019818BE25BA00855310 /* ETCHelperTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4F6019E18BE25BA00855310 /* EtagHelperTests.m */,
+				D4F6019E18BE25BA00855310 /* ETCHelperTests.m */,
 				D4F6019918BE25BA00855310 /* Supporting Files */,
 			);
+			name = ETCHelperTests;
 			path = EtagHelperTests;
 			sourceTree = "<group>";
 		};
 		D4F6019918BE25BA00855310 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4F6019A18BE25BA00855310 /* EtagHelperTests-Info.plist */,
+				D4F6019A18BE25BA00855310 /* ETCHelperTests-Info.plist */,
 				D4F6019B18BE25BA00855310 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -198,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D4F6017518BE25BA00855310 /* EtagHelper */ = {
+		D4F6017518BE25BA00855310 /* ETCHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4F601A218BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelper" */;
+			buildConfigurationList = D4F601A218BE25BA00855310 /* Build configuration list for PBXNativeTarget "ETCHelper" */;
 			buildPhases = (
 				D4F6017218BE25BA00855310 /* Sources */,
 				D4F6017318BE25BA00855310 /* Frameworks */,
@@ -210,14 +212,14 @@
 			);
 			dependencies = (
 			);
-			name = EtagHelper;
+			name = ETCHelper;
 			productName = EtagHelper;
-			productReference = D4F6017618BE25BA00855310 /* EtagHelper.app */;
+			productReference = D4F6017618BE25BA00855310 /* ETCHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D4F6019018BE25BA00855310 /* EtagHelperTests */ = {
+		D4F6019018BE25BA00855310 /* ETCHelperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4F601A518BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelperTests" */;
+			buildConfigurationList = D4F601A518BE25BA00855310 /* Build configuration list for PBXNativeTarget "ETCHelperTests" */;
 			buildPhases = (
 				D4F6018D18BE25BA00855310 /* Sources */,
 				D4F6018E18BE25BA00855310 /* Frameworks */,
@@ -228,9 +230,9 @@
 			dependencies = (
 				D4F6019718BE25BA00855310 /* PBXTargetDependency */,
 			);
-			name = EtagHelperTests;
+			name = ETCHelperTests;
 			productName = EtagHelperTests;
-			productReference = D4F6019118BE25BA00855310 /* EtagHelperTests.xctest */;
+			productReference = D4F6019118BE25BA00855310 /* ETCHelperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +250,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D4F6017118BE25BA00855310 /* Build configuration list for PBXProject "EtagHelper" */;
+			buildConfigurationList = D4F6017118BE25BA00855310 /* Build configuration list for PBXProject "ETCHelper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -260,8 +262,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4F6017518BE25BA00855310 /* EtagHelper */,
-				D4F6019018BE25BA00855310 /* EtagHelperTests */,
+				D4F6017518BE25BA00855310 /* ETCHelper */,
+				D4F6019018BE25BA00855310 /* ETCHelperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -309,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F6019F18BE25BA00855310 /* EtagHelperTests.m in Sources */,
+				D4F6019F18BE25BA00855310 /* ETCHelperTests.m in Sources */,
 				D415CB1B18BE57F3000A3A71 /* ZBRouteManager.m in Sources */,
 				D415CB1718BE57F3000A3A71 /* ZBNode.m in Sources */,
 				D415CB1518BE57F3000A3A71 /* ZBLink.m in Sources */,
@@ -322,7 +324,7 @@
 /* Begin PBXTargetDependency section */
 		D4F6019718BE25BA00855310 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D4F6017518BE25BA00855310 /* EtagHelper */;
+			target = D4F6017518BE25BA00855310 /* ETCHelper */;
 			targetProxy = D4F6019618BE25BA00855310 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -425,9 +427,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
-				INFOPLIST_FILE = "EtagHelper/EtagHelper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "EtagHelper/ETCHelper-Prefix.pch";
+				INFOPLIST_FILE = "EtagHelper/ETCHelper-Info.plist";
+				PRODUCT_NAME = ETCHelper;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -438,9 +440,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
-				INFOPLIST_FILE = "EtagHelper/EtagHelper-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "EtagHelper/ETCHelper-Prefix.pch";
+				INFOPLIST_FILE = "EtagHelper/ETCHelper-Info.plist";
+				PRODUCT_NAME = ETCHelper;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -461,8 +463,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "EtagHelperTests/EtagHelperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "EtagHelperTests/ETCHelperTests-Info.plist";
+				PRODUCT_NAME = ETCHelperTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -480,8 +482,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EtagHelper/EtagHelper-Prefix.pch";
-				INFOPLIST_FILE = "EtagHelperTests/EtagHelperTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "EtagHelperTests/ETCHelperTests-Info.plist";
+				PRODUCT_NAME = ETCHelperTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -490,7 +492,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D4F6017118BE25BA00855310 /* Build configuration list for PBXProject "EtagHelper" */ = {
+		D4F6017118BE25BA00855310 /* Build configuration list for PBXProject "ETCHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4F601A018BE25BA00855310 /* Debug */,
@@ -499,7 +501,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4F601A218BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelper" */ = {
+		D4F601A218BE25BA00855310 /* Build configuration list for PBXNativeTarget "ETCHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4F601A318BE25BA00855310 /* Debug */,
@@ -508,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4F601A518BE25BA00855310 /* Build configuration list for PBXNativeTarget "EtagHelperTests" */ = {
+		D4F601A518BE25BA00855310 /* Build configuration list for PBXNativeTarget "ETCHelperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4F601A618BE25BA00855310 /* Debug */,
