@@ -29,6 +29,7 @@
 		D4780DF418C2286900655FBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4780DF018C2286900655FBB /* InfoPlist.strings */; };
 		D4780DF518C2286900655FBB /* ETCHelperTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4780DF218C2286900655FBB /* ETCHelperTests-Info.plist */; };
 		D4780DF618C2286900655FBB /* ETCHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4780DF318C2286900655FBB /* ETCHelperTests.m */; };
+		D4780DF918C23B4500655FBB /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4780DCE18C2281C00655FBB /* data.txt */; };
 		D4F6017A18BE25BA00855310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017918BE25BA00855310 /* Foundation.framework */; };
 		D4F6017C18BE25BA00855310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017B18BE25BA00855310 /* CoreGraphics.framework */; };
 		D4F6017E18BE25BA00855310 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F6017D18BE25BA00855310 /* UIKit.framework */; };
@@ -302,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4780DF418C2286900655FBB /* InfoPlist.strings in Resources */,
+				D4780DF918C23B4500655FBB /* data.txt in Resources */,
 				D4780DF518C2286900655FBB /* ETCHelperTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +484,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "EtagHelperTests/ETCHelperTests-Info.plist";
+				INFOPLIST_FILE = "ETCHelperTests/ETCHelperTests-Info.plist";
 				PRODUCT_NAME = ETCHelperTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -500,7 +502,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETCHelper/ETCHelper-Prefix.pch";
-				INFOPLIST_FILE = "EtagHelperTests/ETCHelperTests-Info.plist";
+				INFOPLIST_FILE = "ETCHelperTests/ETCHelperTests-Info.plist";
 				PRODUCT_NAME = ETCHelperTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

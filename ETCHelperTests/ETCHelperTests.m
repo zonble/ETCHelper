@@ -2,6 +2,20 @@
 #import "ZBRouteManager.h"
 #include <stdlib.h>
 
+@implementation NSArray (Reverse)
+
+- (NSArray *)reversedArray
+{
+	NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+	NSEnumerator *enumerator = [self reverseObjectEnumerator];
+	for (id element in enumerator) {
+		[array addObject:element];
+	}
+	return array;
+}
+
+@end
+
 @interface ETCHelperTests : XCTestCase
 {
 	ZBRouteManager *manager;
@@ -24,12 +38,6 @@
 {
     [super tearDown];
 }
-
-//- (void)test0
-//{
-//	ZBNode *z = [manager nodeWithName:@"機場系統"];
-//	NSLog(@"z:%@", z.links);
-//}
 
 - (void)testAllNodes
 {
@@ -80,13 +88,57 @@
 		}
 		NSArray *routes = [manager possibleRoutesFromNode:from toNode:to error:nil];
 		XCTAssertTrue([routes count] > 0, @"Must have at least a route");
-		for (ZBRoute *route in routes) {
-			NSLog(@"%@", route.stringPresentation);
-		}
 	}
 }
 
+- (void)testFreeways
+{
+	NSArray *freewayNames = [[manager allFreewayNames] allObjects];
+	for (NSString *name in freewayNames) {
+		NSArray *nodes = [manager nodesOnFreeway:name];
+		ZBNode *begin = [nodes firstObject];
+		ZBNode *end = [nodes lastObject];
+		NSArray *routes = [manager possibleRoutesFromNode:begin toNode:end error:nil];
+		BOOL routeOnTheFreewayFound = NO;
+		for (ZBRoute *route in routes) {
+			NSArray *nodesOnRoute = [[NSArray arrayWithObject:begin] arrayByAddingObjectsFromArray:[route.links valueForKeyPath:@"to"]];
+			if ([nodes count] != [nodesOnRoute count]) {
+				continue;
+			}
+			NSMutableArray *copy = [NSMutableArray arrayWithArray:nodesOnRoute];
+			[copy removeObjectsInArray:nodes];
+			if ([copy count] == 0) {
+				routeOnTheFreewayFound = YES;
+				break;
+			}
+		}
+		XCTAssert(routeOnTheFreewayFound, @"There must be a route using all node on the same freeway");
+	}
+}
 
-
+- (void)testFreewaysReversed
+{
+	NSArray *freewayNames = [[manager allFreewayNames] allObjects];
+	for (NSString *name in freewayNames) {
+		NSArray *nodes = [[manager nodesOnFreeway:name] reversedArray];
+		ZBNode *begin = [nodes firstObject];
+		ZBNode *end = [nodes lastObject];
+		NSArray *routes = [manager possibleRoutesFromNode:begin toNode:end error:nil];
+		BOOL routeOnTheFreewayFound = NO;
+		for (ZBRoute *route in routes) {
+			NSArray *nodesOnRoute = [[NSArray arrayWithObject:begin] arrayByAddingObjectsFromArray:[route.links valueForKeyPath:@"to"]];
+			if ([nodes count] != [nodesOnRoute count]) {
+				continue;
+			}
+			NSMutableArray *copy = [NSMutableArray arrayWithArray:nodesOnRoute];
+			[copy removeObjectsInArray:nodes];
+			if ([copy count] == 0) {
+				routeOnTheFreewayFound = YES;
+				break;
+			}
+		}
+		XCTAssert(routeOnTheFreewayFound, @"There must be a route using all node on the same freeway");
+	}
+}
 
 @end
