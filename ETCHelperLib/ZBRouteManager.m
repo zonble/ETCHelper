@@ -90,6 +90,28 @@ NSString *const ZBRouteManagerErrorDomain = @"ZBRouteManagerErrorDomain";
 	return freewayNodesMap[inName];
 }
 
+- (void)travelLinksForNode:(ZBNode *)node beginNode:(ZBNode *)beginNode destination:(ZBNode *)destinationNode routes:(NSMutableArray *)routes vistedLinks:(NSMutableArray *)visitedLinks vistedNoodes:(NSMutableArray *)visitedNodes
+{
+	for (ZBLink *link in node.links) {
+		ZBNode *to = link.to;
+		if (to == destinationNode) {
+			NSMutableArray *copy = [NSMutableArray arrayWithArray:visitedLinks];
+			[copy addObject:link];
+			ZBRoute *route = [[ZBRoute alloc] initWithBeginNode:beginNode links:copy];
+			[routes addObject:route];
+			continue;
+		}
+		if ([visitedNodes containsObject:to]) {
+			continue;
+		}
+		[visitedLinks addObject:link];
+		[visitedNodes addObject:to];
+		[self travelLinksForNode:to beginNode:beginNode destination:destinationNode routes:routes vistedLinks:visitedLinks vistedNoodes:visitedNodes];
+		[visitedLinks removeLastObject];
+		[visitedNodes removeLastObject];
+	}
+}
+
 - (NSArray *)possibleRoutesFromNode:(ZBNode *)fromNode toNode:(ZBNode *)toNode error:(NSError **)outError
 {
 	NSParameterAssert([nodes containsObject:fromNode]);
@@ -100,60 +122,19 @@ NSString *const ZBRouteManagerErrorDomain = @"ZBRouteManagerErrorDomain";
 		return nil;
 	}
 
-	NSInteger currentIndex = 0;
 	NSMutableArray *routes = [NSMutableArray array];
-	NSArray *initialLinks = fromNode.links;
-	for (ZBLink *link in initialLinks) {
-		[routes addObject:[NSMutableArray arrayWithObject:link]];
-	}
-	while (currentIndex < [routes count]) {
-		NSMutableArray *currentRoute = routes[currentIndex];
-		NSMutableSet *existingNodes = [NSMutableSet setWithArray:[currentRoute valueForKeyPath:@"to"]];
-		[existingNodes addObject:fromNode];
+	NSMutableArray *visitedLinks = [NSMutableArray array];
+	NSMutableArray *visitedNodes = [NSMutableArray array];
+	[visitedNodes addObject:fromNode];
+	[self travelLinksForNode:fromNode beginNode:fromNode destination:toNode routes:routes vistedLinks:visitedLinks vistedNoodes:visitedNodes];
 
-		ZBNode *lastNode = [[currentRoute lastObject] to];
-		while (lastNode) {
-			if (lastNode == toNode) {
-				break;
-			}
-			NSArray *links = [lastNode linksBesideTowardNodes:existingNodes];
-			if (![links count]) {
-				lastNode = nil;
-			}
-			else {
-				if ([links count] > 1) {
-					NSArray *otherLinks = [links subarrayWithRange:NSMakeRange(1, [links count] -1)];
-					for (ZBLink *link in otherLinks) {
-						NSMutableArray *copyRoute = [NSMutableArray arrayWithArray:currentRoute];
-						[copyRoute addObject:link];
-						[routes addObject:copyRoute];
-					}
-				}
-				ZBLink *firstLink = links[0];
-				[currentRoute addObject:firstLink];
-				[existingNodes addObject:firstLink.to];
-				lastNode = firstLink.to;
-			}
-		}
-		currentIndex++;
-	}
-
-	NSMutableArray *successRoutes = [NSMutableArray array];
-	[routes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-		NSArray *links = (NSArray *)obj;
-		ZBLink *link = [links lastObject];
-		if (link.to == toNode) {
-			ZBRoute *route = [[ZBRoute alloc] initWithBeginNode:fromNode links:links];
-			[successRoutes addObject:route];
-		}
-	}];
-
-	[successRoutes sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+	[routes sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
 		ZBRoute *a = (ZBRoute *)obj1;
 		ZBRoute *b = (ZBRoute *)obj2;
 		return [@(a.totalPrice) compare:@(b.totalPrice)];
 	}];
-	return successRoutes;
+
+	return routes;
 }
 
 - (NSArray *)possibleRoutesFrom:(NSString *)fromNodeName to:(NSString *)toNodeName error:(NSError **)outError
